@@ -37,7 +37,7 @@ export async function POST(request){
         model: "gpt-4.1-nano",
         input: prompt ,
         }) 
-        console.log("response : ", response.output_text);
+       // console.log("response : ", response.output_text);
 
 
         //extract the result
