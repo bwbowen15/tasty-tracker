@@ -2,17 +2,43 @@
 import { useState } from "react";
 import RecipeForm from "./components/RecipeForm"
 import ResultDisplay from "./components/ResultDisplay"
+import LoginButton from "./components/LoginButton";
+import AuthPage from "./LoginPage";
+
 
 export default function Home() {
   const [result, setResult] = useState("");
-
+  const [showLogin, setShowLogin] = useState(false);
+  
   return(
     <>
-    <header className="flex items-center justify-between px-6 py-4 bg-black border-b border-white" >
-      <h1 className="text-2xl font-extrabold text-white tracking-wide  select-none">
+    <header className="flex items-center justify-between px-6 py-4 bg-black border-b border-white">
+      <h1 className="text-2xl font-extrabold text-white tracking-wide select-none">
         Tasty Tracker
       </h1>
+      <LoginButton onLoginClick={() => setShowLogin(true)} />
     </header>
+
+    {/* Login Modal Overlay */}
+    {showLogin && (
+      <div style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        background: "rgba(0,0,0,0.5)",
+        zIndex: 1000,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+      }}>
+        <div style={{ position: "relative" }}>
+          <AuthPage onClose={() => setShowLogin(false)} />
+        </div>
+      </div>
+    )}
+
     <main
       style={{
         maxWidth: 700,
