@@ -7,6 +7,12 @@ export default function Home() {
   const [result, setResult] = useState("");
 
   return(
+    <>
+    <header className="flex items-center justify-between px-6 py-4 bg-black border-b border-white" >
+      <h1 className="text-2xl font-extrabold text-white tracking-wide  select-none">
+        Tasty Tracker
+      </h1>
+    </header>
     <main
       style={{
         maxWidth: 700,
@@ -47,6 +53,7 @@ export default function Home() {
 
 
       </main>
+      </>
   )
   
 }

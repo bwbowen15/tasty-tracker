@@ -25,6 +25,7 @@ export async function POST(request){
         Take into account these ingredients that user has: ${pantry || "no restrictions"}.
         Include estimated calories and macros. 
         do not respons as if you are an AI just return the recipe. remember to include the calories and other macros every time no matter what.
+        IF THIS IS NOT FOOD RELATED DISPLAY AN ERROR SAYING "Error: Must be food related!"
 
         Recipe:
         ${recipe}
